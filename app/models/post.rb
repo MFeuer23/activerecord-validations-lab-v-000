@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   def clickbaity
     if !title
       errors.add(:title, "Post needs a title")
-    elsif self.title.exclude?("Won't Believe" || "Secret" || "Top" || "Guess")
+    elsif title.exclude?("Won't Believe" || "Secret" || "Top" || "Guess")
       errors.add(:title, "not clickbait-y enough")
     end
   end
